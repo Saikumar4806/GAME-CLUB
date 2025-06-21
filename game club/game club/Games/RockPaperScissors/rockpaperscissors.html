@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors - Game Club</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .choice {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            background: #f8f9fa;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 3px solid #dc3545;
+        }
+        .choice:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .game-message.win, .game-message.error, .game-message.info {
+            font-size: 2rem;
+            background: #dc3545 !important;
+            color: #fff !important;
+            border: 3px solid #b71c1c !important;
+            box-shadow: 0 4px 16px rgba(220,53,69,0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="card shadow-lg">
+                    <div class="card-body text-center">
+                        <h1 class="card-title text-danger mb-4">
+                            <i class="fas fa-hand-rock me-2"></i>Rock Paper Scissors
+                        </h1>
+                        
+                        <div id="gameMessage" class="alert alert-info" style="display: none;"></div>
+                        
+                        <div class="game-area bg-light p-4 rounded mb-4">
+                            <div class="text-center mb-4">
+                                <div class="alert alert-success d-inline-block px-4 py-2" style="font-size: 2rem; font-weight: bold;">
+                                    <strong>Round :</strong> <span id="roundCount" class="badge bg-success text-white" style="font-size: 2rem; font-weight: bold;">1</span><span style="font-size: 2rem; color: #222;"> /5</span>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mb-4">
+                                <div class="col-md-5 text-center d-flex flex-column align-items-center">
+                                    <h5 class="text-primary">Player</h5>
+                                    <span id="playerScore" class="badge bg-primary fs-4 mb-2">0</span>
+                                    <div class="choice player-choice my-3" id="playerChoice">?</div>
+                                </div>
+                                <div class="col-md-2 text-center">
+                                    <div class="vs fs-1 fw-bold text-danger">VS</div>
+                                </div>
+                                <div class="col-md-5 text-center d-flex flex-column align-items-center">
+                                    <h5 class="text-danger">Computer</h5>
+                                    <span id="computerScore" class="badge bg-danger fs-4 mb-2">0</span>
+                                    <div class="choice computer-choice my-3" id="computerChoice">?</div>
+                                </div>
+                            </div>
+                            <div class="controls mt-4 text-center">
+                                <button class="choice-btn btn btn-primary btn-lg mx-2" data-choice="rock">
+                                    <i class="fas fa-hand-rock me-2"></i>Rock
+                                </button>
+                                <button class="choice-btn btn btn-primary btn-lg mx-2" data-choice="paper">
+                                    <i class="fas fa-hand-paper me-2"></i>Paper
+                                </button>
+                                <button class="choice-btn btn btn-primary btn-lg mx-2" data-choice="scissors">
+                                    <i class="fas fa-hand-scissors me-2"></i>Scissors
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-center gap-3 mb-4">
+                            <a href="../../index.html" class="btn btn-danger">
+                                <i class="fas fa-home me-2"></i>Back to Home
+                            </a>
+                            <button id="newGame" class="btn btn-success">
+                                <i class="fas fa-plus me-2"></i>New Game
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="rockpaperscissors.js"></script>
+</body>
+</html> 

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing - Game Club</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .game-message.info, .game-message.win {
+            font-size: 1.5rem;
+            background: #dc3545 !important;
+            color: #fff !important;
+            border: 3px solid #b71c1c !important;
+            box-shadow: 0 4px 16px rgba(220,53,69,0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="card shadow-lg">
+                    <div class="card-body text-center">
+                        <h1 class="card-title text-info mb-4">
+                            <i class="fas fa-question-circle me-2"></i>Number Guessing Game
+                        </h1>
+                        
+                        <div id="gameMessage" class="alert alert-info" style="display: none;"></div>
+                        
+                        <div class="mb-4">
+                            <label for="difficulty" class="form-label fw-bold">Difficulty:</label>
+                            <select id="difficulty" class="form-select w-auto mx-auto">
+                                <option value="easy">Easy (1-50)</option>
+                                <option value="medium" selected>Medium (1-100)</option>
+                                <option value="hard">Hard (1-200)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="game-area bg-light p-4 rounded mb-4">
+                            <div class="input-area mb-4">
+                                <div class="d-flex justify-content-center gap-3">
+                                    <input type="number" id="guessInput" class="form-control" style="max-width: 200px;" placeholder="Enter your guess" min="1" max="100">
+                                    <button id="submitGuess" class="btn btn-primary">
+                                        <i class="fas fa-paper-plane me-2"></i>Submit Guess
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="hint-area">
+                                <div id="previousGuesses" class="alert alert-secondary mb-3">Previous Guesses: </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="alert alert-primary">
+                                            <strong>Guesses:</strong> <span id="guessCount" class="badge bg-primary">0</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="alert alert-success">
+                                            <strong>Best Score:</strong> <span id="highScore" class="badge bg-success">-</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-center gap-3 mb-4">
+                            <button id="newGame" class="btn btn-success">
+                                <i class="fas fa-plus me-2"></i>New Game
+                            </button>
+                        </div>
+                        
+                        <a href="../../index.html" class="btn btn-danger">
+                            <i class="fas fa-home me-2"></i>Back to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="numberguess.js"></script>
+</body>
+</html> 

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller - Game Club</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .dice {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            display: grid;
+            grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+            padding: 15px;
+            gap: 8px;
+            border: 2px solid #28a745;
+            position: relative;
+        }
+        .dice-number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            font-weight: bold;
+            color: #28a745;
+            z-index: 2;
+            user-select: none;
+        }
+        .dot {
+            background: #333;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: transform 0.3s ease;
+        }
+        .dot.active {
+            transform: scale(1);
+        }
+        .dice-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            min-height: 120px;
+        }
+        .roll-history {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .history-item {
+            font-size: 1.2rem;
+            background: #f8f9fa;
+            border-left: 5px solid #28a745;
+            margin-bottom: 10px;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-md-12">
+                <div class="card shadow-lg">
+                    <div class="card-body text-center">
+                        <h1 class="card-title text-success mb-4">
+                            <i class="fas fa-dice me-2"></i>Dice Roller
+                        </h1>
+                        
+                        <div id="gameMessage" class="alert alert-info" style="display: none;"></div>
+                        
+                        <div class="game-area bg-light p-4 rounded mb-4">
+                            <div class="dice-settings mb-4">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6">
+                                        <label for="diceCount" class="form-label fw-bold">Number of Dice:</label>
+                                        <select id="diceCount" class="form-select">
+                                            <option value="1">1</option>
+                                            <option value="2" selected>2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="diceSides" class="form-label fw-bold">Dice Type:</label>
+                                        <select id="diceSides" class="form-select">
+                                            <option value="4">D4</option>
+                                            <option value="6" selected>D6</option>
+                                            <option value="8">D8</option>
+                                            <option value="10">D10</option>
+                                            <option value="12">D12</option>
+                                            <option value="20">D20</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="diceContainer" class="dice-container mb-4"></div>
+                            
+                            <div class="result-area mb-4">
+                                <div class="alert alert-success">
+                                    <strong>Total:</strong> <span id="totalResult" class="badge bg-success fs-4">0</span>
+                                </div>
+                                <div class="alert alert-info">
+                                    <strong>Individual Results:</strong> <span id="individualResults" class="badge bg-info">[0, 0]</span>
+                                </div>
+                            </div>
+                            
+                            <button id="rollDice" class="btn btn-success btn-lg">
+                                <i class="fas fa-dice me-2"></i>Roll Dice
+                            </button>
+                        </div>
+                        
+                        <div class="roll-history bg-light p-4 rounded">
+                            <h3 class="text-center mb-3">
+                                <i class="fas fa-history me-2"></i>Roll History
+                            </h3>
+                            <div id="rollHistory" class="text-start"></div>
+                        </div>
+                        
+                        <a href="../../index.html" class="btn btn-danger mt-4">
+                            <i class="fas fa-home me-2"></i>Back to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="diceroller.js"></script>
+</body>
+</html> 

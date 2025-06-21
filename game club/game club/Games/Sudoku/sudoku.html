@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku - Game Club</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        #sudoku-board {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            gap: 1px;
+            background: #999;
+            padding: 2px;
+            margin: 2rem auto;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .sudoku-cell {
+            width: 100%;
+            aspect-ratio: 1;
+            text-align: center;
+            font-size: 1.3rem;
+            border: none;
+            padding: 0;
+            background: white;
+            font-weight: 500;
+            /* Add default border for all cells */
+            border-top: 1.5px solid #444;
+            border-right: 1.5px solid #444;
+            border-bottom: 1.5px solid #444;
+            border-left: 1.5px solid #444;
+        }
+        /* Thicker border for first row */
+        .sudoku-cell[data-row="0"] {
+            border-top: 3px solid #222;
+        }
+        /* Thicker border for last column */
+        .sudoku-cell[data-col="8"] {
+            border-right: 3px solid #222;
+        }
+        /* Thicker border for 3x3 boxes */
+        .sudoku-cell[data-row="2"],
+        .sudoku-cell[data-row="5"] {
+            border-bottom: 3px solid #222;
+        }
+        .sudoku-cell[data-col="2"],
+        .sudoku-cell[data-col="5"] {
+            border-right: 3px solid #222;
+        }
+        .sudoku-cell:disabled {
+            background: #f8f9fa;
+            color: #28a745;
+            font-weight: bold;
+        }
+        .sudoku-cell:focus {
+            outline: none;
+            background: #e8f5e8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="card shadow-lg">
+                    <div class="card-body text-center">
+                        <h1 class="card-title text-warning mb-4">
+                            <i class="fas fa-th me-2"></i>Sudoku
+                        </h1>
+                        
+                        <div id="gameMessage" class="alert alert-info" style="display: none;"></div>
+                        
+                        <div class="mb-4">
+                            <label for="difficulty" class="form-label fw-bold">Difficulty:</label>
+                            <select id="difficulty" class="form-select w-auto mx-auto">
+                                <option value="easy">Easy</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div>
+                        
+                        <div id="sudoku-board"></div>
+                        
+                        <div class="row mb-4">
+                            <!-- Removed Time, Completed, Errors display -->
+                        </div>
+                        <div class="d-flex justify-content-center gap-3 mb-4">
+                            <button id="newGame" class="btn btn-success">
+                                <i class="fas fa-plus me-2"></i>New Game
+                            </button>
+                            <button id="checkSolution" class="btn btn-primary">
+                                <i class="fas fa-check me-2"></i>Check Solution
+                            </button>
+                            <button id="solvePuzzle" class="btn btn-warning">
+                                <i class="fas fa-lightbulb me-2"></i>Solve Puzzle
+                            </button>
+                        </div>
+                        
+                        <a href="../../index.html" class="btn btn-danger">
+                            <i class="fas fa-home me-2"></i>Back to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="sudoku.js"></script>
+</body>
+</html> 

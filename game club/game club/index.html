@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Club</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .game-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 15px;
+        }
+        .game-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .game-card img {
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            max-width: 120px !important;
+        }
+        .game-card:hover img {
+            transform: scale(1.05);
+        }
+        .game-card .card-body {
+            padding: 1rem 0.5rem 0.5rem 0.5rem;
+        }
+        .game-card h5 {
+            font-size: 1.1rem;
+        }
+        .game-card .card-text {
+            font-size: 0.95rem;
+        }
+        .game-card .btn {
+            padding: 0.3rem 1.1rem;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-3 text-white fw-bold mb-3">Welcome to Game Club</h1>
+            <p class="lead text-white-50">Choose your favorite game and start playing!</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card game-card h-100">
+                    <div class="card-body text-center">
+                        <img src="../game club/Assets/images/snake.png" alt="Snake Game" class="img-fluid mb-3" style="max-width: 200px;">
+                        <h5 class="card-title text-success">Snake</h5>
+                        <p class="card-text text-muted">Classic snake game with multiple difficulty levels</p>
+                        <a href="Games/Snake/snake.html" class="btn btn-success">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card game-card h-100">
+                    <div class="card-body text-center">
+                        <img src="../game club/Assets/images/tictactoe.png" alt="Tic Tac Toe" class="img-fluid mb-3" style="max-width: 200px;">
+                        <h5 class="card-title text-primary">Tic Tac Toe</h5>
+                        <p class="card-text text-muted">Classic game of X's and O's</p>
+                        <a href="Games/TicTacToe/tictactoe.html" class="btn btn-primary">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card game-card h-100">
+                    <div class="card-body text-center">
+                        <img src="../game club/Assets/images/sudoku.png" alt="Sudoku" class="img-fluid mb-3" style="max-width: 200px;">
+                        <h5 class="card-title text-warning">Sudoku</h5>
+                        <p class="card-text text-muted">Number puzzle with varying difficulties</p>
+                        <a href="Games/Sudoku/sudoku.html" class="btn btn-warning">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card game-card h-100">
+                    <div class="card-body text-center">
+                        <img src="../game club/Assets/images/queens.png" alt="8 Queens" class="img-fluid mb-3" style="max-width: 200px;">
+                        <h5 class="card-title text-info">8 Queens</h5>
+                        <p class="card-text text-muted">Chess puzzle - place 8 queens without conflicts</p>
+                        <a href="Games/8Queens/queens.html" class="btn btn-info">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card game-card h-100">
+                    <div class="card-body text-center">
+                        <img src="../game club/Assets/images/cointoss.png" alt="Coin Toss" class="img-fluid mb-3" style="max-width: 200px;">
+                        <h5 class="card-title text-warning">Coin Toss</h5>
+                        <p class="card-text text-muted">Test your luck with heads or tails</p>
+                        <a href="Games/CoinToss/cointoss.html" class="btn btn-warning">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card game-card h-100">
+                    <div class="card-body text-center">
+                        <img src="../game club/Assets/images/numberguessing.png" alt="Number Guessing" class="img-fluid mb-3" style="max-width: 200px;">
+                        <h5 class="card-title text-info">Number Guessing</h5>
+                        <p class="card-text text-muted">Guess the number with helpful hints</p>
+                        <a href="Games/NumberGuess/numberguess.html" class="btn btn-info">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card game-card h-100">
+                    <div class="card-body text-center">
+                        <img src="../game club/Assets/images/Rockpaperscissors.png" alt="Rock Paper Scissors" class="img-fluid mb-3" style="max-width: 200px;">
+                        <h5 class="card-title text-danger">Rock Paper Scissors</h5>
+                        <p class="card-text text-muted">Classic hand game against the computer</p>
+                        <a href="Games/RockPaperScissors/rockpaperscissors.html" class="btn btn-danger">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card game-card h-100">
+                    <div class="card-body text-center">
+                        <img src="../game club/Assets/images/diceroller.png" alt="Dice Roller" class="img-fluid mb-3" style="max-width: 200px;">
+                        <h5 class="card-title text-success">Dice Roller</h5>
+                        <p class="card-text text-muted">Roll various types of dice</p>
+                        <a href="Games/DiceRoller/diceroller.html" class="btn btn-success">Play Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card game-card h-100">
+                    <div class="card-body text-center">
+                        <img src="../game club/Assets/images/lightsout.png" alt="Dice Roller" class="img-fluid mb-3" style="max-width: 200px;">
+                        <h5 class="card-title text-warning">Lights Out</h5>
+                        <p class="card-text text-muted">Turn off all the lights to win</p>
+                        <a href="Games/LightsOut/lightsout.html" class="btn btn-warning">Play Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-white py-4 mt-5">
+        <p class="mb-0">&copy; 2024 Game Club. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
